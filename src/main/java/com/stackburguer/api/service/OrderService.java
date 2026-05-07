@@ -46,9 +46,6 @@ public class OrderService {
     @Value("${stripe.webhook.secret}")
     private String endpointSecret;
 
-    @Value("${url.api.product}")
-    private String urlApiProduct;
-
     public OrderResponseDTO createOrder(OrderRequestDTO dto, User user) throws StripeException {
         List<ProductItem> items = dto.products().stream().map(itemRequest -> {
             var product = productRepository.findById(itemRequest.id())
@@ -59,7 +56,7 @@ public class OrderService {
                     product.getName(),
                     product.getPrice(),
                     product.getCategory().getName(),
-                    urlApiProduct + product.getPath(),
+                    product.getPath(),
                     itemRequest.quantity()
             );
         }).toList();
