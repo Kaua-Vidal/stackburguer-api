@@ -18,7 +18,7 @@ public record ProductResponseDTO (
                 product.getName(),         // 2. name (String)
                 product.getPrice(),        // 3. price (Double)
                 // 4. url (String) - Lógica de montagem da URL
-                product.getPath() != null ? "http://localhost:8080/files/" + product.getPath() : null,
+                product.getPath() != null ? "https://stackburguer-uploads-kauavidal.s3.sa-east-1.amazonaws.com/" + product.getPath() : null,
                 // 5. category (CategoryResponseDTO) - Transformação da entidade
                 product.getCategory() != null ? new CategoryResponseDTO(product.getCategory()) : null,
                 product.isOffer()          // 6. offer (boolean)
