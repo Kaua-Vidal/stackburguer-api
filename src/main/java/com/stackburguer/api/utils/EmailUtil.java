@@ -13,7 +13,7 @@ public class EmailUtil {
 
 
     public void enviarEmailStatusPedido(String destinataria, String mensagemTexto) {
-        System.out.println("E-mail do destinatário recebido no Serviceee: ->" + destinataria + "<-");
+        System.out.println("E-mail do destinatáriooo recebido no Serviceee: ->" + destinataria + "<-");
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("kauakauavidalpc@gmail.com");
